@@ -38,9 +38,8 @@ const Skills = () => {
           <h1>Skills</h1>
           <p>
             With a diverse range of skills, including expertise in ReactJS,
-            React Native, NodeJS, MongoDB, and GraphQL, I am a versatile
-            software engineer with the ability to tackle a wide variety of
-            projects and challenges
+            NodeJS, MongoDB and Linux, I am a versatile software engineer with
+            the ability to tackle a wide variety of projects and challenges
           </p>
         </section>
         <section className="bottom">

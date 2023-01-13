@@ -54,7 +54,10 @@ const Wrappers = styled.div`
   }
 
   .${(props) => props.role} {
-    background-color: red;
+    background-color: var(--red);
+    color: white;
+    border-radius: 1rem;
+    border: 3px solid red;
   }
   .role {
     background-color: white;
