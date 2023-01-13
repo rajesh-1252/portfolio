@@ -23,7 +23,7 @@ const Wrappers = styled.div`
   }
   @media (max-width: 900px) {
     nav {
-      visibility: hidden;
+      display: none;
     }
   }
 `;

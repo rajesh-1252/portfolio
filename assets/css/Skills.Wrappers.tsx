@@ -20,13 +20,15 @@ const Wrappers = styled.div`
     font-size: 1.4rem;
     max-width: 500px;
   }
-
+  .left {
+    margin: 0 auto;
+  }
   .role {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 500px;
-    font-size: 1.2rem;
+    max-width: 400px;
+    font-size: 1.1rem;
     border: 1px solid black;
     margin-bottom: 1rem;
   }
@@ -35,7 +37,7 @@ const Wrappers = styled.div`
   }
   .technology {
     border: 1px solid black;
-    max-width: 500px;
+    max-width: 400px;
     height: 270px;
     display: flex;
     gap: 3rem 1rem;
