@@ -7,6 +7,7 @@ import Skills from "../page/Skills";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Contact from "../page/Contact";
+import Project from "../page/Project";
 export default function Home() {
   return (
     <>
@@ -15,6 +16,7 @@ export default function Home() {
       <About />
       <Experience />
       <Skills />
+      <Project />
       <Contact />
       <Footer />
     </>
