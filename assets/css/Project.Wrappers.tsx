@@ -17,11 +17,15 @@ const Wrappers = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    width: 40%;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
     padding: 2rem;
   }
+  .description {
+    max-width: 300px;
+    text-align: center;
+  }
+
   .title {
     text-align: center;
   }

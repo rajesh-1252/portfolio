@@ -8,6 +8,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Contact from "../page/Contact";
 import Project from "../page/Project";
+import { useEffect } from "react";
 export default function Home() {
   return (
     <>
