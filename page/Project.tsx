@@ -7,7 +7,7 @@ import project1Img from "../public/project1.png";
 const Project = () => {
   return (
     <Wrappers>
-      <h2 className="heading">Some of My Recent Projects</h2>
+      <h2 id={"projects"} className="heading">Some of My Recent Projects</h2>
       <div className="card">
         <div className="img">
           <Image src={project1Img} height={200} alt={"ProjectImage"} />

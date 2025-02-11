@@ -3,8 +3,10 @@ import styled from "styled-components";
 const Wrappers = styled.div`
   /* background-color: red; */
   margin-bottom: -8rem;
+  background-color: var(--primary-900);
   position: sticky;
-  top: 0px;
+  z-index: 1000;
+  top: -1px;
   .bg {
   }
   nav {

@@ -52,6 +52,11 @@ const backEnd = [
     logopath: "/restApi.svg",
     name: "REST Api",
   },
+  {
+    id: 5,
+    logopath: "/golang.svg",
+    name: "Golang",
+  },
 ];
 
 const server = [
@@ -60,6 +65,11 @@ const server = [
     logopath: "/linux.svg",
     name: "Linux",
   },
+  {
+    id: 2,
+    logopath: "/aws.svg",
+    name: "Aws",
+  },
 ];
 
 const productivity = [
@@ -67,6 +77,16 @@ const productivity = [
     id: 1,
     logopath: "/vim.svg",
     name: "Vim",
+  },
+  {
+    id: 2,
+    logopath: "/neovim.svg",
+    name: "Neo vim",
+  },
+  {
+    id: 3,
+    logopath: "/tmux.svg",
+    name: "tmux",
   },
 ];
 

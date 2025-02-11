@@ -46,12 +46,12 @@ const socials = [
   {
     id: 2,
     path: "/linkedIn.svg",
-    href: "",
+    href: "https://www.linkedin.com/in/madhan-rajesh-613734184",
   },
   {
     id: 3,
-    path: "/twitter.svg",
-    href: "",
+    path: "/leetcode.svg",
+    href: "https://leetcode.com/mrmadhan1327",
   },
 ];
 
