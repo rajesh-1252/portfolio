@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-const Wrappers = styled.div`
+interface WrapperProps extends React.HTMLAttributes<HTMLDivElement> {
+  role: string;
+}
+
+const Wrappers = styled.div<WrapperProps>`
   display: flex;
   justify-content: space-between;
   margin-left: var(--margin-left);
