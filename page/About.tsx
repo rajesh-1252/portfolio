@@ -11,7 +11,7 @@ const About = () => {
           <h3>About Me</h3>
           <p>
             A Mechanical engineer who is very much intrested to learn new things
-            but fortunatly i didnt get a chance to work in mechanical feild. Now
+            but fortunatly i didnt get a chance to work in mechanical field. Now
             working as a full stack developer and love solving complex problem.
             And mesmerized by how entire stack works.
           </p>

@@ -14,7 +14,7 @@ const HomePage = () => {
       <div className="bg-img">
         <section className="intro">
           <h1 className="name">Madhan Rajesh</h1>
-          <h3 className="profession">Full Stack Devloper</h3>
+          <h3 className="profession">Full Stack Developer</h3>
           <div className="social-links">
             {socials.map((item) => {
               const { href, id, path } = item;
