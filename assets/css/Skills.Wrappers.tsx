@@ -65,6 +65,7 @@ const Wrappers = styled.div<WrapperProps>`
   }
   .role {
     background-color: white;
+    cursor : pointer;
   }
   .bottom {
     margin-bottom: 2rem;
