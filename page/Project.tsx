@@ -63,9 +63,11 @@ const Project = () => {
                     <span key={tIdx} className="tech-item">{t} {tIdx < project.tech.length - 1 ? "•" : ""}</span>
                   ))}
                 </div>
-                <Link href={project.link} target="_blank" className="live-link">
-                  View Case Study →
-                </Link>
+                {project.link !== "#" && (
+                  <Link href={project.link} target="_blank" className="live-link">
+                    View Case Study →
+                  </Link>
+                )}
               </div>
             </motion.div>
           ))}
