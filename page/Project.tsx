@@ -2,10 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Wrappers from "../assets/css/Project.Wrappers";
+import shopifyImg from "../public/shopify-price-transformer.png";
 import project1Img from "../public/project1.png";
 import { motion } from "framer-motion";
 
 const projects = [
+  {
+    title: "Shopify Price Transformer",
+    tag: "Dynamic Pricing Automation",
+    description: "A high-performance full-stack Shopify application designed to automate complex pricing transformations. Leverages Shopify's Admin GraphQL API to apply bulk discounts via merchant-defined tags, ensuring data integrity by archiving original prices.",
+    tech: ["Remix", "Shopify Polaris", "GraphQL", "Prisma"],
+    link: "#",
+    image: shopifyImg
+  },
   {
     title: "Job Tracker SaaS",
     tag: "Revenue-Driven Platform",
