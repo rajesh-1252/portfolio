@@ -1,72 +1,67 @@
-import { ServerResponse } from "http";
-import Image from "next/image";
-import React, { MouseEvent, useState } from "react";
+import React from "react";
 import Wrappers from "../assets/css/Skills.Wrappers";
-import {
-  backEnd,
-  frontEnd,
-  productivity,
-  server,
-} from "../utils/data/technology";
+import { motion } from "framer-motion";
+
+const skillCategories = [
+  {
+    title: "Frontend Engineering",
+    skills: ["React (Functional)", "TypeScript", "Redux Toolkit", "Styled Components", "Framer Motion", "Responsive Design"]
+  },
+  {
+    title: "Backend & Systems",
+    skills: ["Node.js (Async/Await)", "Express API Design", "MongoDB Logic", "JWT Auth Systems", "RESTful Architecture", "Third-party APIs"]
+  },
+  {
+    title: "Infrastructure & Tools",
+    skills: ["Docker", "Linux (Ubuntu)", "Vercel Deployment", "Git/GitHub", "LocalStack", "Postman / Insomnia"]
+  }
+];
+
 const Skills = () => {
-  const [role, setRole] = useState("frontEnd");
-  const [technology, setTechnology] = useState(frontEnd);
-
-  const handleRoleChange = (e: MouseEvent<HTMLDivElement>) => {
-    const tech = (e.target as HTMLInputElement).className;
-    setRole(tech);
-    let arr = e.currentTarget.childNodes;
-
-    // event.target here is an HTMLElement which is the parent of all HTML elements, but isn't guaranteed to have the property value. TypeScript detects this and throws the error. Cast event.target to the appropriate HTML element to ensure it is HTMLInputElement which does have a value property
-
-    const currentTech =
-      tech == "frontEnd"
-        ? frontEnd
-        : tech == "backEnd"
-        ? backEnd
-        : tech == "server"
-        ? server
-        : productivity;
-    setTechnology(currentTech);
-  };
-
   return (
-    <Wrappers role={role}>
+    <Wrappers>
       <div id="skills"></div>
-      <section className="left">
-        <section className="top">
-          <h1>Skills</h1>
-          <p>
-            With a diverse range of skills, including expertise in ReactJS,
-            NodeJS, MongoDB and Linux, I am a versatile software engineer with
-            the ability to tackle a wide variety of projects and challenges
-          </p>
-        </section>
-        <section className="bottom">
-          <div className="role" onClick={handleRoleChange}>
-            <p className="frontEnd">Frontend</p>
-            <p className="backEnd">Backend</p>
-            <p className="server">Server</p>
-            <p className="productivity">Productivity</p>
-          </div>
-          <div className="technology">
-            {technology.map((item) => {
-              const { logopath, name, id } = item;
-              return (
-                <div key={id} className="tech">
-                  <div className="img">
-                    <Image src={logopath} width={80} height={60} alt={name} />
-                  </div>
-                  <span>{name}</span>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      </section>
-      <section className="right">
-        <Image src={"/skills.gif"} alt={"skills"} width={600} height={600} />
-      </section>
+      <div className="container">
+        <div className="title-section">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            Core Technical Strengths
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            Expertise built through building complex, production-ready systems with a focus on
+            clean architecture and measurable outcomes.
+          </motion.p>
+        </div>
+
+        <div className="skills-grid">
+          {skillCategories.map((cat, idx) => (
+            <motion.div
+              key={idx}
+              className="skill-card"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+            >
+              <h3>{cat.title}</h3>
+              <div className="tech-list">
+                {cat.skills.map((skill, sIdx) => (
+                  <span key={sIdx} className="tech-badge">{skill}</span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </Wrappers>
   );
 };

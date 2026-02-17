@@ -1,91 +1,86 @@
 import styled from "styled-components";
 
-interface WrapperProps extends React.HTMLAttributes<HTMLDivElement> {
-  role: string;
-}
-
-const Wrappers = styled.div<WrapperProps>`
-  display: flex;
-  justify-content: space-between;
-  margin-left: var(--margin-left);
-  background-image: url("/experienceBackground.svg");
-  background-position-x: right;
-  background-position-y: bottom;
-  background-repeat: no-repeat;
-
-  .top {
-    margin-bottom: 3rem;
-  }
-  .top h1 {
-    color: var(--red);
-    margin-bottom: 2rem;
-  }
-  .top p {
-    font-size: 1.4rem;
-    max-width: 500px;
-  }
-  .left {
+const Wrappers = styled.section`
+  padding: 8rem 2rem;
+  background: var(--background);
+  
+  .container {
+    max-width: 1200px;
     margin: 0 auto;
   }
-  .role {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 400px;
-    font-size: 1.1rem;
-    border: 1px solid black;
-    margin-bottom: 1rem;
-  }
-  .role p {
-    padding: 2rem 0.5rem;
-  }
-  .technology {
-    border: 1px solid black;
-    max-width: 400px;
-    height: 270px;
-    display: flex;
-    gap: 3rem 1rem;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding: 1rem;
+
+  .title-section {
+    margin-bottom: 4rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .tech {
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .skill-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    align-items: center;
+    gap: 1.5rem;
   }
 
-  .${(props) => props.role} {
-    background-color: var(--red);
-    color: white;
-    border-radius: 1rem;
-    border: 3px solid red;
+  .skill-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    background: rgba(59, 130, 246, 0.05);
   }
-  .role {
-    background-color: white;
-    cursor : pointer;
-  }
-  .bottom {
-    margin-bottom: 2rem;
-  }
-  .right {
-    margin-right: var(--margin-right);
-  }
-  @media screen and (max-width: 500px) {
+
+  .skill-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-image: none;
-    .top h1,
-    p {
-      text-align: center;
-    }
-    .left {
-    }
-    .right {
+    gap: 0.75rem;
+  }
+
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .tech-badge {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
+    font-size: 0.9rem;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+  }
+
+  .tech-badge:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  @media (max-width: 768px) {
+    padding: 4rem 1.5rem;
+    .skills-grid {
+      grid-template-columns: 1fr;
     }
   }
 `;
+
 export default Wrappers;

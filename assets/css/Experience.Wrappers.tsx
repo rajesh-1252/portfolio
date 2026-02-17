@@ -1,145 +1,98 @@
 import styled from "styled-components";
 
-const Wrappers = styled.div`
-  margin-top: 5rem;
-  .circle {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background-color: black;
-    position: absolute;
-    top: 2rem;
-    z-index: 10;
-  }
-  .timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 100px auto;
-  }
+const Wrappers = styled.section`
+  padding: 8rem 2rem;
+  background: var(--background);
+  
   .container {
-    padding: 10px 50px;
+    max-width: 1000px;
+    margin: 0 auto;
     position: relative;
-    width: 50%;
-    animation: movedown 1s linear forwards;
-    opacity: 0;
-  }
-  @keyframes movedown {
-    0% {
-      opacity: 1;
-      transform: translateY(-30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
   }
 
-  .text-box {
-    padding: 1.7rem 2.5rem;
-    background: var(--primary-900);
-    color: white;
-    position: relative;
-    border-radius: 6px;
-    font-size: 1rem;
-  }
-  .text-box h2 {
-    color: var(--font-color);
-    font-family: bite-chocolate;
-    margin-bottom: 1rem;
-  }
-  small {
-    background-color: var(--red);
-    padding: 3px 5px;
-    border-radius: 2rem;
-  }
-  .text-box p {
-    margin-top: 1rem;
-  }
-  .container:nth-child(2n) {
-    left: 50%;
-  }
-  .container:nth-child(2n) .circle {
-    left: -1.4rem;
-  }
-  .container:nth-child(2n-1) .circle {
-    right: -1.6rem;
-  }
-  .container:nth-child(2n -1) {
-    left: 0;
-  }
-  .right-arrow {
-    right: -0.9rem;
-    border-left: 15px solid var(--red);
-  }
-  .left-arrow,
-  .right-arrow {
-    height: 0;
-    width: 0;
+  .timeline-track {
     position: absolute;
-    top: 33px;
-    z-index: 1;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-  }
-  .left-arrow {
-    left: -0.9rem;
-    border-right: 15px solid var(--red);
-  }
-
-  .timeline:after {
-    content: "";
-    position: absolute;
-    background-color: black;
-    width: 0.5rem;
-    height: 100%;
+    left: 2rem;
     top: 0;
-    left: 50%;
-    margin-left: -3px;
-    z-index: -1;
-    animation: moveline 6s linear forwards;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
   }
-  @keyframes moveline {
-    0% {
-      height: 0;
-    }
-    100% {
-      height: 100%;
-    }
+
+  .experience-item {
+    position: relative;
+    padding-left: 5rem;
+    margin-bottom: 4rem;
   }
-  @media (max-width: 900px) {
+
+  .dot {
+    position: absolute;
+    left: 1.6rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--primary-glow);
+    z-index: 2;
   }
-  @media screen and (max-width: 600px) {
-    .timeline {
-      margin: 50px auto;
+
+  .content {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .content:hover {
+    border-color: var(--primary);
+    background: rgba(59, 130, 246, 0.05);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: var(--foreground);
+    margin-bottom: 0.25rem;
+  }
+
+  .role-title {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .timeline {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  @media (max-width: 768px) {
+    padding: 4rem 1.5rem;
+    .timeline-track {
+      left: 1rem;
     }
-    .timeline::after {
-      left: 31px;
+    .experience-item {
+      padding-left: 3rem;
     }
-    .container {
-      width: 100%;
-      padding-left: 80px;
-      padding-right: 25px;
+    .dot {
+      left: 0.6rem;
     }
-    .text-box {
-      font-size: 13px;
-    }
-    .container:nth-child(2n) {
-      left: 0;
-    }
-    .container:nth-child(2n) .circle {
-      left: 0.5rem;
-    }
-    .container:nth-child(2n-1) .circle {
-      left: 0.5rem;
-    }
-    .container:nth-child(2n -1) {
-      left: 0;
-    }
-    .right-arrow {
-      left: -0.9rem;
-      border-left: 0;
-      border-right: 15px solid var(--red);
+    .content {
+      padding: 1.5rem;
     }
   }
 `;
+
 export default Wrappers;

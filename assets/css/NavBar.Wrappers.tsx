@@ -1,32 +1,58 @@
 import styled from "styled-components";
 
-const Wrappers = styled.div`
-  /* background-color: red; */
-  margin-bottom: -8rem;
-  background-color: #000c24;
-  position: sticky;
+const Wrappers = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  top: -1px;
-  .bg {
-  }
+  padding: 1.5rem 2rem;
+  background: rgba(10, 10, 12, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+
   nav {
-    margin-left: 3rem;
-  }
-  ul {
-    font-family: bite-chocolate;
-    padding: 3rem 2rem;
-    width: 60vw;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
-    align-content: center;
+    align-items: center;
   }
+
+  .logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--foreground);
+    letter-spacing: -0.02em;
+  }
+
+  ul {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
   a {
-    color: var(--font-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--muted);
+    transition: all 0.2s ease;
+    text-transform: capitalize;
   }
-  @media (max-width: 900px) {
-    nav {
+
+  a:hover {
+    color: var(--foreground);
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem 1.5rem;
+    ul {
       display: none;
     }
   }
 `;
+
 export default Wrappers;

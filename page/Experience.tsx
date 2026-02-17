@@ -1,54 +1,45 @@
 import React from "react";
 import Wrappers from "../assets/css/Experience.Wrappers";
+import { motion } from "framer-motion";
 
 const works = [
-{
-    name: "Lotuscrew technology",
-    description:
-      "Worked as a full stack developer and built a Shopify app for customer service, integrating Facebook, WhatsApp, Email, Instagram, and custom chatbots to streamline communication for store owners. Developed a React Native mobile app designed to improve English accents, similar to Duolingo.",
+  {
+    company: "Lotuscrew Technology",
+    role: "Full Stack Engineer",
     timeline: "2022 - 2024",
+    impact: "Architected a Shopify ecosystem integration for centralized customer service, unifying Facebook, WhatsApp, and Instagram messaging. Developed custom AI chatbots to streamline merchant workflows and built a high-performance React Native mobile app for immersive language learning."
   },
   {
-    name: "Brand Image Tech Solutions",
-    description:
-      "Worked at a small startup company as a Full Stack Developer, where my role was to develop reusable and scalable applications and deploy them on an unmanaged VPS server (Linux).",
+    company: "Brand Image Tech Solutions",
+    role: "Full Stack Developer",
     timeline: "2021 - 2022",
-  },
-  {
-    name: "SSLC",
-    description:
-      "Studied at St. Marys Matriculation Higher Secondary School, Redhills, Chennai, Tamil Nadu.",
-    timeline: "2015 - 2016",
-  },
-  {
-    name: "Higher Secondary School",
-    description:
-      "Studied at St. Marys Matriculation Higher Secondary School, Redhills, Chennai, Tamil Nadu.",
-    timeline: "2016 - 2017",
-  },
-  {
-    name: "B.E Mechanical Engineering",
-    description:
-      "Studied B.E Mechanical Engineering at Vel Tech High Tech Dr. Rangarajan Dr. Sakunthala Engineering College, Chennai, Tamil Nadu.",
-    timeline: "2017 - 2021",
-  },
+    impact: "Engineered scalable web applications and managed production deployments on Linux VPS systems. Focused on building reusable architecture and implementing secure API endpoints for startup-scale products."
+  }
 ];
 
 const Experience = () => {
   return (
     <Wrappers>
       <div id="experience"></div>
-      <div className="timeline">
+      <div className="container">
+        <div className="timeline-track"></div>
         {works.map((work, index) => (
-          <div className="container" key={index}>
-            <div className="circle"></div>
-            <div className="text-box">
-              <h2>{work.name}</h2>
-              <small>{work.timeline}</small>
-              <p>{work.description}</p>
-              <span className={index % 2 === 0 ? "right-arrow" : "left-arrow"}></span>
+          <motion.div
+            className="experience-item"
+            key={index}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <div className="dot"></div>
+            <div className="content">
+              <h2>{work.company}</h2>
+              <span className="role-title">{work.role}</span>
+              <span className="timeline">{work.timeline}</span>
+              <p>{work.impact}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </Wrappers>

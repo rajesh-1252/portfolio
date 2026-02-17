@@ -1,56 +1,68 @@
 import styled from "styled-components";
-const Wrappers = styled.div`
-  margin-top: -100vh;
+
+const Wrappers = styled.section`
+  padding: 8rem 2rem;
+  background: var(--background);
+  
   .container {
-    margin-top: 10rem;
-    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
     align-items: center;
-    justify-content: space-between;
   }
-  .left,
-  .right {
-  }
+
   .left {
-    width: 500px;
-    margin-left: 6rem;
-  }
-  .left {
-    background: url("/aboutme.gif");
-    height: 500px;
-    background-size: contain;
-    background-repeat: no-repeat;
+    position: relative;
+    aspect-ratio: 1/1;
+    background: var(--glass);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
   }
 
   .right {
-    margin-top: -6rem;
-    width: 700px;
-    margin-right: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
+
   h3 {
-    font-size: 2rem;
-    color: red;
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
   }
+
   p {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--muted);
   }
+
+  .highlight {
+    color: var(--foreground);
+    font-weight: 500;
+  }
+
   @media (max-width: 900px) {
-    p {
-      color: white;
-    }
+    padding: 4rem 1.5rem;
     .container {
-      margin-top: 0;
-      flex-wrap: wrap-reverse;
-    }
-    .right {
+      grid-template-columns: 1fr;
       text-align: center;
-      margin: 0 auto;
-      padding: 1rem;
-      margin-bottom: 4rem;
+      gap: 2rem;
     }
     .left {
-      margin: 0 auto;
+      display: none;
+    }
+    h3 {
+      font-size: 2rem;
     }
   }
 `;
+
 export default Wrappers;
