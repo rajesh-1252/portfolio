@@ -8,7 +8,7 @@ const NavBar = () => {
     <Wrappers>
       <nav>
         <Link href="/" className="logo">
-          MR<span style={{ color: "var(--primary)" }}>.</span>
+          MR.Madhan<span style={{ color: "var(--primary)" }}>.</span>
         </Link>
         <ul>
           {navData.map((item) => {
