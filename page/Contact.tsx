@@ -28,21 +28,15 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <form action="" onSubmit={handleSubmit}>
-            <div className="row">
-              <label htmlFor="name">Full Name</label>
-              <input type="text" name="name" id="name" placeholder="John Doe" />
-            </div>
-            <div className="row">
-              <label htmlFor="email">Email Address</label>
-              <input type="email" name="email" id="email" placeholder="john@example.com" />
-            </div>
-            <div className="row">
-              <label htmlFor="message">Project Brief</label>
-              <textarea name="message" id="message" rows={4} placeholder="Describe your project goals..." />
-            </div>
-            <button className="submit-btn" type="submit">Send Message</button>
-          </form>
+          <div className="contact-card">
+            <p style={{ marginBottom: "2rem", lineHeight: "1.6" }}>
+              I'm currently open to new opportunities, specialized consultations, and collaborative ventures.
+              The most efficient way to initiate a conversation is via email.
+            </p>
+            <a href="mailto:madhanrajesh1252@gmail.com" className="submit-btn" style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              Send Message
+            </a>
+          </div>
         </motion.div>
       </div>
     </Wrappers>
