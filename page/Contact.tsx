@@ -1,11 +1,26 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, useState } from "react";
 import Wrappers from "../assets/css/Contact.Wrappers";
 import { motion } from "framer-motion";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const { name, email, message } = formData;
+    const subject = encodeURIComponent(`Project Inquiry from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    window.location.href = `mailto:madhanrajesh1252@gmail.com?subject=${subject}&body=${body}`;
   };
+
   return (
     <Wrappers>
       <div id="contact"></div>
@@ -28,15 +43,45 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="contact-card">
-            <p style={{ marginBottom: "2rem", lineHeight: "1.6" }}>
-              I'm currently open to new opportunities, specialized consultations, and collaborative ventures.
-              The most efficient way to initiate a conversation is via email.
-            </p>
-            <a href="mailto:madhanrajesh1252@gmail.com" className="submit-btn" style={{ textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              Send Message
-            </a>
-          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="row">
+              <label htmlFor="name">Full Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="John Doe"
+                required
+                value={formData.name}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="row">
+              <label htmlFor="email">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="john@example.com"
+                required
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="row">
+              <label htmlFor="message">Project Brief</label>
+              <textarea
+                name="message"
+                id="message"
+                rows={4}
+                placeholder="Describe your project goals..."
+                required
+                value={formData.message}
+                onChange={handleChange}
+              />
+            </div>
+            <button className="submit-btn" type="submit">Send Message</button>
+          </form>
         </motion.div>
       </div>
     </Wrappers>
