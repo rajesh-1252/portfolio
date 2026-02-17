@@ -2,28 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Wrappers from "../assets/css/Project.Wrappers";
-import shopifyImg from "../public/shopify-price-transformer.png";
-import project1Img from "../public/project1.png";
 import { motion } from "framer-motion";
-
-const projects = [
-  {
-    title: "Shopify Price Transformer",
-    tag: "Dynamic Pricing Automation",
-    description: "A high-performance full-stack Shopify application designed to automate complex pricing transformations. Leverages Shopify's Admin GraphQL API to apply bulk discounts via merchant-defined tags, ensuring data integrity by archiving original prices.",
-    tech: ["Remix", "Shopify Polaris", "GraphQL", "Prisma"],
-    link: "#",
-    image: shopifyImg
-  },
-  {
-    title: "Job Tracker SaaS",
-    tag: "Revenue-Driven Platform",
-    description: "A full-scale job tracking ecosystem featuring secure JWT authentication, role-based access, and a data-driven dashboard. Focused on high conversion rates and user retention through refined UX and backend reliability.",
-    tech: ["React", "Node.js", "MongoDB", "Auth0"],
-    link: "https://job-tracker1.onrender.com/all-jobs",
-    image: project1Img
-  }
-];
+import { projectsData, ProjectData } from "../utils/data/projects";
 
 const Project = () => {
   return (
@@ -42,7 +22,7 @@ const Project = () => {
         </div>
 
         <div className="projects-grid">
-          {projects.map((project, idx) => (
+          {projectsData.map((project, idx) => (
             <motion.div
               key={idx}
               className={`project-card ${idx % 2 !== 0 ? 'reverse' : ''}`}
@@ -64,7 +44,11 @@ const Project = () => {
                   ))}
                 </div>
                 {project.link !== "#" && (
-                  <Link href={project.link} target="_blank" className="live-link">
+                  <Link
+                    href={project.link}
+                    className="live-link"
+                    target={project.link.startsWith("http") ? "_blank" : undefined}
+                  >
                     View Case Study →
                   </Link>
                 )}
